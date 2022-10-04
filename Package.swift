@@ -30,8 +30,11 @@ let package = Package(name: "AFNetworking",
                                   .iOS(.v9),
                                   .tvOS(.v9),
                                   .watchOS(.v2)],
-                      products: [.library(name: "AFNetworking",
-                                          targets: ["AFNetworking"])],
+                      products: [
+                        .library(name: "AFNetworking", targets: ["AFNetworking"]),
+                        .library(name: "AFNetworkingStatic", type: .static, targets: ["AFNetworking"]),
+                        .library(name: "AFNetworkingDynamic", type: .dynamic, targets: ["AFNetworking"]),
+                      ],
                       targets: [.target(name: "AFNetworking",
                                         path: "AFNetworking",
                                         publicHeadersPath: "")])
